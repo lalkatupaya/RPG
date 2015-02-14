@@ -50,6 +50,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Magical = new System.Windows.Forms.ListBox();
             this.Rare = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -194,7 +200,7 @@
             this.listBox4.FormattingEnabled = true;
             this.listBox4.Location = new System.Drawing.Point(327, 227);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(39, 95);
+            this.listBox4.Size = new System.Drawing.Size(40, 95);
             this.listBox4.TabIndex = 13;
             // 
             // listBox5
@@ -257,7 +263,7 @@
             "Magic || Клавиатура",
             "Magic || Нунчаки",
             "Magic || Шведский Нож"});
-            this.Magical.Location = new System.Drawing.Point(58, 256);
+            this.Magical.Location = new System.Drawing.Point(12, 256);
             this.Magical.Name = "Magical";
             this.Magical.Size = new System.Drawing.Size(84, 95);
             this.Magical.TabIndex = 19;
@@ -279,11 +285,71 @@
             "Rare || Клавиатура",
             "Rare || Нунчаки",
             "Rare || Шведский Нож"});
-            this.Rare.Location = new System.Drawing.Point(122, 256);
+            this.Rare.Location = new System.Drawing.Point(22, 256);
             this.Rare.Name = "Rare";
             this.Rare.Size = new System.Drawing.Size(84, 95);
             this.Rare.TabIndex = 20;
             this.Rare.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button2.Location = new System.Drawing.Point(169, 328);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Продать";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.button3.Location = new System.Drawing.Point(250, 328);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(92, 23);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Использовать";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(476, 287);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Деньги:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(530, 287);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "0";
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.progressBar3.ForeColor = System.Drawing.Color.Lime;
+            this.progressBar3.Location = new System.Drawing.Point(468, 252);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(100, 23);
+            this.progressBar3.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label9.Location = new System.Drawing.Point(581, 257);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "1";
             // 
             // Form1
             // 
@@ -291,6 +357,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(625, 356);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.progressBar3);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.Rare);
             this.Controls.Add(this.Magical);
             this.Controls.Add(this.label6);
@@ -342,6 +414,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox Magical;
         private System.Windows.Forms.ListBox Rare;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.Label label9;
     }
 }
 

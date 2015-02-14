@@ -12,7 +12,7 @@ namespace WindowsFormsApplication3
 {
     public partial class Form1 : Form
     {
-        int BossLife = 1000, MaxBossLife = 1000, Hp = 1000, damage, BossDamage;
+        int BossLife = 1000, MaxBossLife = 1000, Hp = 1000, damage, BossDamage,damageofitem=10,chanceofcrit=25;
         Random rnq = new Random();    
         
         public Form1()
@@ -25,11 +25,11 @@ namespace WindowsFormsApplication3
 
             Random rn = new Random();
             
-            damage = 10 + rn.Next(-5, +5);
+            damage = damageofitem + rn.Next(-5, +5);
             label1.ForeColor = Color.Lime;
-            if (rn.Next(0, 100) <= 25)
+            if (rn.Next(0, 100) <= chanceofcrit)
             {
-                damage = 50 + rn.Next(-5, +5);
+                damage = damage * 5 + rn.Next(-5, +5);
                 label1.ForeColor = Color.Red;
             }
 
@@ -58,7 +58,7 @@ namespace WindowsFormsApplication3
                 }
                 else
                 {
-                    if (rnq.Next(0, 100) <= 35)
+                    if (rnq.Next(0, 100) <= 25)
                     {
                         listBox2.Items.Add(Magical.Items[rnq.Next(0, Magical.Items.Count)]);
                         listBox3.Items.Add(rnq.Next(500, 15000));
@@ -71,6 +71,15 @@ namespace WindowsFormsApplication3
                         listBox3.Items.Add(rnq.Next(1, 500));
                         listBox4.Items.Add(rnq.Next(1, 500));
                         listBox5.Items.Add(rnq.Next(1, 50));
+                    }
+                    if (progressBar3.Value + rn.Next(-10, 10) + 25  >= 100){
+                        progressBar3.Value = 0;
+                        int i = int.Parse(label9.Text) + 1;
+                        label9.Text = i.ToString();
+                    }
+                    else
+                    {
+                        progressBar3.Value = progressBar3.Value + rn.Next(-10, 10) + 25;
                     }
                 }
                 
@@ -114,6 +123,36 @@ namespace WindowsFormsApplication3
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(listBox2.SelectedIndex > -1){
+            int money,i;
+            money = int.Parse(label8.Text) + int.Parse(listBox3.Items[listBox2.SelectedIndex].ToString());
+            label8.Text = money.ToString();
+            i = listBox2.SelectedIndex;
+            listBox5.Items.RemoveAt(i);
+            listBox4.Items.RemoveAt(i);
+            listBox3.Items.RemoveAt(i);
+            listBox2.Items.RemoveAt(i);
+            }
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedIndex > -1)
+            {
+                int i;
+                i = listBox2.SelectedIndex;
+                damageofitem = int.Parse(listBox4.Items[i].ToString());
+                chanceofcrit = int.Parse(listBox5.Items[i].ToString());
+                listBox5.Items.RemoveAt(i);
+                listBox4.Items.RemoveAt(i);
+                listBox3.Items.RemoveAt(i);
+                listBox2.Items.RemoveAt(i);
+            }
         }
 
         }
